@@ -1,0 +1,32 @@
+// Replacing Minimum , Maximum element in an array
+#include <iostream>
+using namespace std;
+int main(){
+    int n,i;
+    cin>>n;
+    int arr[n];
+    for(i=0;i<n;i++){
+        cin>>arr[i];
+    }
+    int min=arr[0];
+    int min_index=0;
+    int max=arr[0];
+    int max_index=0;
+    int start;
+    for(i=1;i<n;i++){
+        if(arr[i]>max){
+            max=arr[i];
+            max_index=i;
+        }
+        else if(arr[i]<min){
+            min=arr[i];
+            min_index=i;
+        }
+    }
+    int temp = arr[min_index];
+    arr[min_index]=arr[max_index];
+    arr[max_index] = temp;
+    for(i=0;i<n;i++){
+        cout<<arr[i]<<" ";
+    }
+}
